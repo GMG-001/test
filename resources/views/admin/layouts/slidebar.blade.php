@@ -37,12 +37,28 @@
         </a>
         <div id="collapseBootstrap1" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Category</h6>
+                <h6 class="collapse-header">Subcategory</h6>
                 <a class="collapse-item" href="{{route('subcategory.index')}}">View</a>
                 <a class="collapse-item" href="{{route('subcategory.create')}}">Create</a>
             </div>
         </div>
     </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap2"
+           aria-expanded="true" aria-controls="collapseBootstrap2">
+            <i class="far fa-fw fa-window-maximize"></i>
+            <span>Product</span>
+        </a>
+        <div id="collapseBootstrap2" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Product</h6>
+                <a class="collapse-item" href="{{route('product.index')}}">View</a>
+                <a class="collapse-item" href="{{route('product.create')}}">Create</a>
+            </div>
+        </div>
+    </li>
+
     <li class="nav-item">
         <a class="nav-link" href="forms.html">
             <i class="fab fa-fw fa-wpforms"></i>
@@ -89,12 +105,34 @@
             </div>
         </div>
     </li>
+{{--    <li class="nav-item">--}}
+{{--        <a class="nav-link" href="charts.html">--}}
+{{--            <i class="fas fa-fw fa-chart-area"></i>--}}
+{{--            <span>Charts</span>--}}
+{{--        </a>--}}
+{{--    </li>--}}
+    <hr class="sidebar-divider">
+
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span>
+
+
+        <a class="dropdown-item" href="{{ route('logout') }}"
+           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+
         </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+
+
+
     </li>
     <hr class="sidebar-divider">
-    <div class="version" id="version-ruangadmin"></div>
+</ul>
+{{--    <hr class="sidebar-divider">--}}
+{{--    <div class="version" id="version-ruangadmin"></div>--}}
 </ul>

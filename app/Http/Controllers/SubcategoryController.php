@@ -37,7 +37,7 @@ class SubcategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name'=>'required|min:3',
+            'name'=>'required|min:2',
             'category'=>'required'
         ]);
         Subcategory::create([
@@ -82,7 +82,7 @@ class SubcategoryController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'name'=>'required|min:3',
+            'name'=>'required|min:2',
             'category'=>'required'
         ]);
         $subcategory=Subcategory::find($id);
