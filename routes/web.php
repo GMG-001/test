@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+//Route::get('/',[\App\Http\Controllers\FrontProductListController::class,'index']);
+Route::get('/','\App\Http\Controllers\FrontProductListController@index');
+Route::get('/product/{id}','\App\Http\Controllers\FrontProductListController@show');
+
+
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
