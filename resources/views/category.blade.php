@@ -11,11 +11,31 @@
                 <form action="{{route("product.list",$slug)}}" method="GET">
                     <!--foreach subcategories-->
                     @foreach($subcategories as $subcategory)
-                    <p><input type="checkbox" name="subcategory[]" value="{{$subcategory->id}}">{{$subcategory->name}}</p>
+                    <p><input type="checkbox" name="subcategory[]" value="{{$subcategory->id}}"
+                        @if(isset($filterSubCategories)){{in_array($subcategory->id, $filterSubCategories)?'checked="checked"':''}} @endif>
+                        {{$subcategory->name}}
+                    </p>
                     @endforeach
                     <!--end foreach-->
                     <input type="submit" value="Filter" class="btn btn-success">
                 </form>
+
+                <hr>
+                <h3>Filter by price</h3>
+                <form  action="{{route('product.list',[$slug])}}" method="GET">
+                    <input type="text" name="min" class="form-control" placeholder="minimum price" required="">
+                    <br>
+                    <input type="text" name="max" class="form-control" placeholder="maximum price" required=""  >
+                    <input type="hidden" name="categoryId" value="{{$categoryId}}">
+
+                    <br>
+                    <br>
+                    <input type="submit" value="Filter" class="btn btn-secondary">
+                </form>
+
+                <hr>
+                <a href="{{route('product.list',[$slug])}}">Back</a>
+
             </div>
             <div class="col-md-10">
                 <div class="row">
