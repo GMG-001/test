@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 //});
 //Route::get('/',[\App\Http\Controllers\FrontProductListController::class,'index']);
 Route::get('/','\App\Http\Controllers\FrontProductListController@index');
-Route::get('/product/{id}','\App\Http\Controllers\FrontProductListController@show');
+Route::get('/product/{id}','\App\Http\Controllers\FrontProductListController@show')->name('product.view');
 
 
 Auth::routes();

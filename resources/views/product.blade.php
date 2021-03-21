@@ -37,7 +37,7 @@
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <a href="product/{{$product->id}}"> <button type="button" class="btn btn-sm btn-outline-success">View</button></a>
+                                            <a href="{{route("product.view",$product->id)}}"> <button type="button" class="btn btn-sm btn-outline-success">View</button></a>
                                             <button type="button" class="btn btn-sm btn-outline-primary">Add to cart</button>
                                         </div>
                                         <small class="text-muted">${{$product->price}}</small>
@@ -67,7 +67,7 @@
                                             </p>
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div class="btn-group">
-                                                    <a href="product/{{$product->id}}"> <button type="button" class="btn btn-sm btn-outline-success">View</button></a>
+                                                    <a href="{{route('product.view',$product->id)}}"> <button type="button" class="btn btn-sm btn-outline-success">View</button></a>
                                                     <button type="button" class="btn btn-sm btn-outline-primary">Add to cart</button>
                                                 </div>
                                                 <small class="text-muted">${{$product->price}}</small>
@@ -93,7 +93,7 @@
                                                 </p>
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <div class="btn-group">
-                                                        <a href="product/{{$product->id}}"> <button type="button" class="btn btn-sm btn-outline-success">View</button></a>
+                                                        <a href="{{route('product.view',$product->id)}}"> <button type="button" class="btn btn-sm btn-outline-success">View</button></a>
                                                         <button type="button" class="btn btn-sm btn-outline-primary">Add to cart</button>
                                                     </div>
                                                     <small class="text-muted">${{$product->price}}</small>
