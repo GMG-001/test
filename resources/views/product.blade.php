@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <main>
+        <a>
             <section class="py-5 text-center container">
                 <div class="row py-lg-5">
                     <div class="col-lg-6 col-md-8 mx-auto">
@@ -17,7 +17,7 @@
             </section>
             <h2>Category</h2>
             @foreach($category as $cat)
-                <button class="btn btn-secondary">{{$cat->name}}</button>
+                <a href="{{route('product.list',$cat->slug)}}"><button class="btn btn-secondary">{{$cat->name}}</button> </a>
             @endforeach
 
             <div class="album py-5 bg-light">
