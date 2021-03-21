@@ -27,7 +27,7 @@
                         @foreach($products as $product)
                         <div class="col">
                             <div class="card shadow-sm">
-                                <img src="{{Storage::url($product->image)}}">
+                                <img src="{{Storage::url($product->image)}}" height="200" style="width: 100%">
                                 <div class="card-body">
                                     <p>
                                         <b>{{$product->name}}</b>
@@ -54,34 +54,54 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="row">
-                                <div class="col-3">
-                                  <img src="/storage/product/PF3Xac3mcZwpDmBf4pHMtCvswGwKTZSQZoLg4F1D.jpg" class="img-thumbnail">
+                                @foreach($randomActiveProducts as $product)
+                                <div class="col-4">
+                                    <div class="card shadow-sm">
+                                        <img src="{{Storage::url($product->image)}}" height="200" style="width: 100%">
+                                        <div class="card-body">
+                                            <p>
+                                                <b>{{$product->name}}</b>
+                                            </p>
+                                            <p class="card-text">
+                                                {{Str::limit($product->description,120)}}
+                                            </p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="btn-group">
+                                                    <a href="product/{{$product->id}}"> <button type="button" class="btn btn-sm btn-outline-success">View</button></a>
+                                                    <button type="button" class="btn btn-sm btn-outline-primary">Add to cart</button>
+                                                </div>
+                                                <small class="text-muted">${{$product->price}}</small>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-3">
-                                    <img src="/storage/product/PF3Xac3mcZwpDmBf4pHMtCvswGwKTZSQZoLg4F1D.jpg" class="img-thumbnail">
-                                </div>
-                                <div class="col-3">
-                                    <img src="/storage/product/PF3Xac3mcZwpDmBf4pHMtCvswGwKTZSQZoLg4F1D.jpg" class="img-thumbnail">
-                                </div>
-                                <div class="col-3">
-                                    <img src="/storage/product/PF3Xac3mcZwpDmBf4pHMtCvswGwKTZSQZoLg4F1D.jpg" class="img-thumbnail">
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row">
-                                <div class="col-3">
-                                    <img src="/storage/product/PF3Xac3mcZwpDmBf4pHMtCvswGwKTZSQZoLg4F1D.jpg" class="img-thumbnail">
-                                </div>
-                                <div class="col-3">
-                                    <img src="/storage/product/PF3Xac3mcZwpDmBf4pHMtCvswGwKTZSQZoLg4F1D.jpg" class="img-thumbnail">
-                                </div>
-                                <div class="col-3">
-                                    <img src="/storage/product/PF3Xac3mcZwpDmBf4pHMtCvswGwKTZSQZoLg4F1D.jpg" class="img-thumbnail">
-                                </div>
-                                <div class="col-3">
-                                    <img src="/storage/product/PF3Xac3mcZwpDmBf4pHMtCvswGwKTZSQZoLg4F1D.jpg" class="img-thumbnail">
-                                </div>
+                                @foreach($randomItemProducts as $product)
+                                    <div class="col-4">
+                                        <div class="card shadow-sm">
+                                            <img src="{{Storage::url($product->image)}}" height="200" style="width: 100%">
+                                            <div class="card-body">
+                                                <p>
+                                                    <b>{{$product->name}}</b>
+                                                </p>
+                                                <p class="card-text">
+                                                    {{Str::limit($product->description,120)}}
+                                                </p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="btn-group">
+                                                        <a href="product/{{$product->id}}"> <button type="button" class="btn btn-sm btn-outline-success">View</button></a>
+                                                        <button type="button" class="btn btn-sm btn-outline-primary">Add to cart</button>
+                                                    </div>
+                                                    <small class="text-muted">${{$product->price}}</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
