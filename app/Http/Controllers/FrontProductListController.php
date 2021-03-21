@@ -42,6 +42,7 @@ class FrontProductListController extends Controller
 
         $category  = Category::where('slug',$name)->first();
         $categoryId=$category->id;
+        $filterSubCategories = [];
         if($request->subcategory){
             $products=$this->filterProducts($request);
             $filterSubCategories = $this->getSubcategoriesId($request);
