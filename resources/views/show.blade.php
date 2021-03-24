@@ -38,7 +38,7 @@
                             {!!$product->additional_info!!}
                         </p>
                         <hr>
-                        <a href="#" class="btn btn-lg btn-outline-primary text-uppercase">add to cart</a>
+                        <a href="{{route('add.cart',$product->id)}}" class="btn btn-lg btn-outline-primary text-uppercase">add to cart</a>
 
                     </section>
                 </aside>
@@ -63,7 +63,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <a href="{{route('product.view',$product->id)}}"> <button type="button" class="btn btn-sm btn-outline-success">View</button></a>
-                                        <button type="button" class="btn btn-sm btn-outline-primary">Add to cart</button>
+                                        <a href="{{route('add.cart',$product->id)}}">  <button type="button" class="btn btn-sm btn-outline-primary">Add to cart</button></a>
                                     </div>
                                     <small class="text-muted">${{$product->price}}</small>
                                 </div>

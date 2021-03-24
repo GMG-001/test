@@ -22,6 +22,13 @@ Route::get('/','\App\Http\Controllers\FrontProductListController@index');
 Route::get('/product/{id}','\App\Http\Controllers\FrontProductListController@show')->name('product.view');
 Route::get('/category/{name}','\App\Http\Controllers\FrontProductListController@allProduct')->name('product.list');
 
+Route::get('/addToCart/{product}','\App\Http\Controllers\CartController@addToCart')->name('add.cart');
+Route::get('/cart','\App\Http\Controllers\CartController@showCart')->name('cart.show');
+Route::post('/products/{product}','\App\Http\Controllers\CartController@updatecart')->name('cart.update');
+Route::post('/product/{product}','\App\Http\Controllers\CartController@removeCart')->name('cart.remove');
+
+
+
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
