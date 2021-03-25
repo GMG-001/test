@@ -14,9 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 //Route::get('/',[\App\Http\Controllers\FrontProductListController::class,'index']);
 Route::get('/','\App\Http\Controllers\FrontProductListController@index');
 Route::get('/product/{id}','\App\Http\Controllers\FrontProductListController@show')->name('product.view');
@@ -26,6 +23,9 @@ Route::get('/addToCart/{product}','\App\Http\Controllers\CartController@addToCar
 Route::get('/cart','\App\Http\Controllers\CartController@showCart')->name('cart.show');
 Route::post('/products/{product}','\App\Http\Controllers\CartController@updatecart')->name('cart.update');
 Route::post('/product/{product}','\App\Http\Controllers\CartController@removeCart')->name('cart.remove');
+Route::get('checkout/{amount}','\App\Http\Controllers\CartController@checkout')->name('cart.checkout')->middleware('auth');
+Route::post('/charge','\App\Http\Controllers\CartController@charge')->name('cart.charge');
+Route::get('/orders','\App\Http\Controllers\CartController@order')->name('order')->middleware('auth');
 
 
 
